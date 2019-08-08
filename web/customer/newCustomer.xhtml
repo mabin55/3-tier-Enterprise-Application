@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>Create a new Customer</title>
+</h:head>
+<h:body style = "background-color: #dbe6e3">
+    <h1 style = "background-color: #173b5e ; color:white; font-size: 54px; font-weight: bold">Create a new Customer</h1>
+    <hr/>
+    <h:form>
+        <table border="0">
+            <tr>
+                <td>
+                    <h:outputLabel value="Name: "/>
+                </td>
+                <td>
+                    <h:inputText value="#{customerController.newCustomer.name}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:outputLabel value="Address: "/>
+                </td>
+                <td>
+                    <h:inputText value="#{customerController.newCustomer.address}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:outputLabel value="Phone Number: "/>
+                </td>
+                <td>
+                    <h:inputText value="#{customerController.newCustomer.phoneNumber}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:outputLabel value="Email Address: "/>
+                </td>
+                <td>
+                    <h:inputText value="#{customerController.newCustomer.emailAddress}"/>
+                </td>
+            </tr>
+            
+    </table>          
+        <h:commandButton value="Create Customer" action="#{customerController.doCreateNewCustomer()}"/>
+    </h:form>
+    
+    <h:form>
+        <h:commandLink action="#{customerController.showCustomerList}">Customer List</h:commandLink>
+        |
+        <a href="../index.faces">Main Page</a>
+    </h:form>
+    <hr/>
+
+</h:body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>The stock of brand new cars</title>
+</h:head>
+<h:body style = "background-color: #dbe6e3">
+    <h1 style = "background-color: #173b5e ; color:white; font-size: 54px; font-weight: bold">The stock of brand new cars</h1>
+    <hr/>
+    <h:dataTable value="#{carController.newCarList}" var="it" border="1">
+
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Make"/>
+            </f:facet>
+            <h:outputText value="#{it.carMake}"/>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Model"/>
+            </f:facet>
+            <h:outputText value="#{it.carModel}"/>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Reference Number"/>
+            </f:facet>
+            <h:outputText value="#{it.referenceNumber}"/>
+        </h:column>
+
+    </h:dataTable>
+    <h:form>
+        <h:commandLink action="#{carController.doBrandNewCar}">Create a brand new car</h:commandLink>
+        |
+        <a href="../index.faces">Main Page</a>
+    </h:form>
+    <hr/>
+</h:body>
+</html>
+

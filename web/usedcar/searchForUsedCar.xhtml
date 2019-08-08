@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>Search for used car</title>
+</h:head>
+<h:body style = "background-color: #dbe6e3">
+    <h1 style = "background-color: #173b5e ; color:white; font-size: 54px; font-weight: bold">Search for used car</h1>
+    <hr/>
+    <h:form>
+        <table border="0">
+            <tr>
+                <td>
+                    <h:outputLabel value="Reference Number: "/>
+                </td>
+                <td>
+                    <h:inputText value="#{carController.searchUsedCarWithRN}"/>
+                </td>
+            </tr>
+    </table>          
+        <h:commandButton value="Search for a Used Car" action="#{carController.searchUsedCar}"/>
+
+    </h:form>
+    
+    <h:form>
+        <h:commandLink action="#{carController.showUsedCarList}">Stock of used car</h:commandLink>
+        |
+        <a href="../index.faces">Main Page</a>
+    </h:form>
+    <hr/>
+
+</h:body>
+</html>

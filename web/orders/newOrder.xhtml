@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Create a new Order</title>
+</h:head>
+<h:body style = "background-color: #dbe6e3">
+    <h1 style = "background-color: #173b5e ; color:white; font-size: 54px; font-weight: bold">Create a new Order</h1>
+    <hr/>
+    <h:form>
+        <table border="0">
+            <tr>
+                <td>
+                    <h:outputLabel value="Customer: "/>
+                </td>
+                <td>
+                    <h:selectOneMenu value="#{orderController.newOrder.customer}">
+                        <f:selectItems value ="#{customerController.customerList}" var="c" itemLabel ="#{c.name}" itemValue="#{c}"/>
+                        
+                    </h:selectOneMenu>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:outputLabel value="Car: "/>
+                </td>
+                <td>
+                    <h:selectOneMenu value ="#{orderController.newOrder.car}">
+                        <f:selectItems value ="#{carController.carList}" var="c" itemLabel ="#{c.carModel}" itemValue="#{c}"/>
+                        
+                    </h:selectOneMenu>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:outputLabel value="Quantity: "/>
+                </td>
+                <td>
+                    <h:inputText value="#{orderController.newOrder.quantity}"/>
+                </td>
+            </tr>
+        </table>
+        <h:commandButton value="Create a Car Order" action="#{orderController.doCreateNewOrder()}"/>
+    </h:form>
+    
+    <h:form>
+        <h:commandLink action="#{orderController.showOrderList()}">List of car Orders</h:commandLink>
+        |
+        <a href="../index.faces">Main Page</a>
+    </h:form>
+    <hr/>
+</h:body>
+</html>
